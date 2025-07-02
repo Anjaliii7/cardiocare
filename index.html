@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CardioCare</title>
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">
+        <img
+          src="logo.png"
+          alt="Logo"
+          width="32"
+          height="26"
+          class="d-inline-block align-text-top"
+        />
+        CardioCare
+      </div>
+      <nav>
+        <ul>
+          <li id="home-link">
+            <a href="#"><i class="fa-solid fa-house"></i>Home</a>
+          </li>
+          <li id="explore-link">
+            <a href="#"><i class="fa-solid fa-book-open-reader"></i>Explore</a>
+          </li>
+          <li id="about-link">
+            <a href="#"><i class="fa-solid fa-users"></i> About Us</a>
+          </li>
+          <form id="search-form" onsubmit="return false;">
+            <div class="search-wrapper">
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Search                          🔍"
+                oninput="toggleResetButton()"
+              />
+              <button
+                type="button"
+                class="reset-btn"
+                onclick="resetSearch()"
+                title="Reset Search"
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <button type="submit" style="display: none"></button>
+          </form>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-text">
+        <h1>WE ARE HERE</h1>
+        <h1>
+          TO TAKE CARE OF YOUR HEALTH
+          <i class="fa-solid fa-heart-circle-check"></i>
+        </h1>
+        <p>
+          Discover potential risks and get guidance for a heart-healthy life.
+          Prevention is better than cure, start today.
+        </p>
+        <br />
+        <p>
+          <strong>Take the first step towards a healthier heart today!</strong>
+        </p>
+        <br /><br />
+        <h3>
+          Check your heart health now <i class="fa-solid fa-arrow-right"></i>
+        </h3>
+      </div>
+      <div class="login-container">
+        <div class="glass-card">
+          <div class="logo">
+            <h3><i class="fa-solid fa-shield-heart"></i>CardioCare</h3>
+            <br />
+          </div>
+
+          <form
+            id="prediction-form"
+            class="login-form"
+            
+          >
+            <input
+              type="number"
+              id="age"
+              name="age"
+              placeholder="Enter your age"
+              required
+            />
+            <input
+              type="number"
+              id="chol"
+              name="cholesterol"
+              placeholder="Cholesterol level (mg/dL)"
+              required
+            />
+            <input
+              type="number"
+              id="trestbps"
+              name="blood_pressure"
+              placeholder="Blood pressure (mm Hg)"
+              required
+            />
+
+            <button type="submit">Check</button>
+            <div
+              id="prediction-result"
+              style="margin-top: 15px; font-weight: bold"
+            ></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diet Section -->
+    <section id="diet" class="diet-section">
+      <h2>Diet-Recommendation</h2>
+      <br />
+      <p>
+        Eating a heart-healthy diet is crucial for maintaining cardiovascular
+        health. Here are some dietary recommendations:
+      </p>
+      <p>
+        Incorporate a variety of fruits, vegetables, whole grains, and lean
+        proteins into your meals.
+      </p>
+      <br />
+      <div class="diet-cards">
+        <div class="diet-card eat-card">
+          <h3>Foods to Eat</h3>
+          <ul>
+            <li>Leafy Greens</li>
+            <li>Whole Grains</li>
+            <li>Fatty Fish</li>
+          </ul>
+        </div>
+        <div class="diet-card avoid-card">
+          <h3>Foods to Avoid</h3>
+          <ul>
+            <li>Processed Meats</li>
+            <li>Sugary Drinks</li>
+            <li>Trans Fats</li>
+          </ul>
+        </div>
+        <div class="diet-card risk-card">
+          <h3>Risk Factors</h3>
+          <ul>
+            <li>High Salt Intake</li>
+            <li>Sedentary Lifestyle</li>
+            <li>Obesity</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lifestyle Section -->
+    <section id="lifestyle" class="lifestyle">
+      <h2>Healthy Lifestyle Habits</h2>
+      <p>
+        Adopting a healthy lifestyle can significantly reduce the risk of heart
+        disease. Here are some key habits to consider:
+      </p>
+      <p>
+        Incorporating these habits into your daily routine can lead to a
+        healthier heart and overall well-being.
+      </p>
+      <br />
+      <div class="lifestyle-container">
+        <div class="circle-card">
+          <div class="emoji">🏃‍♂</div>
+          <div><b>Exercise</b></div>
+        </div>
+        <div class="circle-card">
+          <div class="emoji">🛌</div>
+          <div><b>Proper Sleep</b></div>
+        </div>
+        <div class="circle-card">
+          <div class="emoji">💧</div>
+          <div><b>Stay Hydrated</b></div>
+        </div>
+        <div class="circle-card">
+          <div class="emoji">🧘‍♀</div>
+          <div><b>Reduce Stress</b></div>
+        </div>
+      </div>
+    </section>
+    <!-- Facts Section -->
+    <!-- Facts Section -->
+    <section id="did-you-know" class="lifestyle">
+      <h2>Did you know ?</h2>
+      <p>Here are some interesting facts about heart health:</p>
+      <p>
+        Understanding these facts can help you make informed decisions about
+        your heart health.
+      </p>
+      <br />
+      <div class="facts-container">
+        <div class="fact-card" onclick="toggleFact(this)">
+          <i class="fa-solid fa-hand-fist"></i>
+          <span>The Heart’s Strength and rarity of Cancer.</span>
+          <p class="fact-detail">
+            Your heart is a powerful pump—each minute, it circulates around 1.5
+            gallons (5.7 liters) of blood throughout your body. Over time, this
+            flow adds up: in less than a year, your heart could pump enough
+            blood to fill an Olympic-sized swimming pool. This constant effort
+            highlights just how tirelessly the heart works to keep you alive and
+            healthy. Heart cancer is extremely rare because the heart is
+            composed mostly of cells called cardiomyocytes, which stop dividing
+            shortly after birth. Most cancers form in tissues with rapidly
+            dividing cells, making them more prone to mutations. Since heart
+            cells rarely divide, there's a lower chance for such mutations to
+            occur. Additionally, the heart’s constant motion and rich blood flow
+            may create an environment less favorable for tumor growth. As a
+            result, primary heart cancers like cardiac sarcomas are
+            exceptionally uncommon.
+          </p>
+        </div>
+        <div class="fact-card" onclick="toggleFact(this)">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <span>Heart disease is the leading cause of death globally.</span>
+          <p class="fact-detail">
+            It accounts for nearly 18 million deaths each year. The most common
+            type is coronary artery disease, which restricts blood flow to the
+            heart. Risk factors include high blood pressure, high cholesterol,
+            smoking, obesity, diabetes, and a sedentary lifestyle. Many heart
+            diseases are preventable with early lifestyle changes, regular
+            checkups, and awareness of symptoms like chest pain or shortness of
+            breath.
+          </p>
+        </div>
+
+        <div class="fact-card" onclick="toggleFact(this)">
+          <i class="fa-solid fa-droplet"></i>
+          <span
+            >Laughing is good for the heart and can increase blood flow by 20
+            percent.</span
+          >
+          <p class="fact-detail">
+            Laughter is great for heart health. It improves blood flow by up to
+            20%, relaxes blood vessels, and reduces stress hormones like
+            cortisol. Laughing also increases oxygen intake, relaxes muscles,
+            lowers inflammation, and boosts the immune system. Plus, it
+            strengthens social bonds, which are linked to better heart health.
+            In short, laughter supports both physical and emotional well-being.
+          </p>
+        </div>
+
+        <div class="fact-card" onclick="toggleFact(this)">
+          <i class="fa-solid fa-smoking-ban"></i>
+          <span>Smoking doubles the risk of a heart attack.</span>
+          <p class="fact-detail">
+            In fact, smokers are twice as likely to suffer a heart attack
+            compared to non-smokers. The harmful chemicals in tobacco damage the
+            lining of blood vessels, raise blood pressure, reduce oxygen in the
+            blood, and cause the heart to work harder. Even exposure to
+            secondhand smoke can increase heart disease risk. Quitting smoking
+            greatly improves heart health and reduces the risk within just a few
+            years.
+          </p>
+        </div>
+
+        <div class="fact-card" onclick="toggleFact(this)">
+          <i class="fa-solid fa-person-walking"></i>
+          <span>Walking 30 minutes a day lowers heart risk.</span>
+          <p class="fact-detail">
+            Regular brisk walking helps improve circulation, reduce blood
+            pressure, manage weight, and boost heart function. It also lowers
+            bad cholesterol (LDL) and increases good cholesterol (HDL).
+            Consistent daily walking is one of the simplest and most effective
+            ways to support long-term heart health.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Facts Section -->
+    <!-- Read More / Cards Section -->
+    <section class="read-more">
+      <h2>Explore More</h2>
+      <p class="p1">Explore key topics to maintain a healthy heart.</p>
+      <p class="p1">Click on the cards below to learn more about each topic.</p>
+      <br />
+
+      <div class="card-container">
+        <!-- Nutrition Card -->
+        <div class="card" onclick="toggleCard(this)">
+          <!-- <img src="diet.png" alt="Diet"> -->
+          <h3>Nutrition</h3>
+          <p>
+            Eat heart-friendly foods that fuel your body and boost
+            cardiovascular strength.
+          </p>
+          <div class="card-detail">
+            <p>
+              Nutrition is a critical part of health and development. Better
+              nutrition is related to improved infant, child and maternal
+              health, stronger immune systems, safer pregnancy and childbirth,
+              lower risk of non-communicable diseases (such as diabetes and
+              cardiovascular disease), and longevity. Healthy children learn
+              better. People with adequate nutrition are more productive and can
+              create opportunities to gradually break the cycles of poverty and
+              hunger. Malnutrition, in every form, presents significant threats
+              to human health.
+            </p>
+          </div>
+        </div>
+
+        <!-- Workouts Card -->
+        <div class="card" onclick="toggleCard(this)">
+          <!-- <img src="exercise.png" alt="Exercise"> -->
+          <h3>Workouts</h3>
+          <p>
+            Do simple, effective exercises to keep your heart strong and energy
+            high every day.
+          </p>
+          <div class="card-detail">
+            <p>
+              Regular physical activity improves blood circulation, strengthens
+              your heart, and significantly reduces stress levels. Just 30
+              minutes a day of moderate movement — whether it's brisk walking,
+              cycling, yoga, or dancing — can greatly enhance your
+              cardiovascular health. Exercise helps regulate blood pressure,
+              boosts mood by releasing endorphins, and improves sleep quality.
+              It also assists in maintaining a healthy weight, reducing the risk
+              of obesity, type 2 diabetes, and high cholesterol — all major
+              contributors to heart disease.
+            </p>
+          </div>
+        </div>
+
+        <!-- Checkups Card -->
+        <div class="card" onclick="toggleCard(this)">
+          <h3>Regular Checkups</h3>
+          <p>
+            Regular health screenings help detect heart issues early, enabling
+            timely treatment
+          </p>
+          <div class="card-detail">
+            <p>
+              Routine health checkups play a crucial role in maintaining heart
+              health, even when no symptoms are visible. Many heart-related
+              conditions, such as high blood pressure or elevated cholesterol,
+              develop silently over time. Regular screenings — including blood
+              pressure measurement, cholesterol level analysis, blood sugar
+              tests, and ECGs (electrocardiograms) — help detect issues early
+              before they become serious. Early diagnosis allows for timely
+              lifestyle changes or medical interventions that can prevent
+              complications like heart attacks or strokes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stress Management Card -->
+        <div class="card" onclick="toggleCard(this)">
+          <!-- <img src="stress.png" alt="Stress Management"> -->
+          <h3>Stress Management</h3>
+          <p>
+            A peaceful mind is the first step toward a powerful, healthy heart.
+          </p>
+          <div class="card-detail">
+            <p>
+              Chronic stress is a silent threat to heart health. It triggers the
+              release of hormones like cortisol and adrenaline, which over time
+              can lead to high blood pressure, irregular heart rhythms, and even
+              cardiovascular disease. Prolonged stress also encourages unhealthy
+              coping mechanisms such as overeating, smoking, or lack of physical
+              activity, which further strain the heart. Incorporating
+              stress-reduction techniques into your daily routine can
+              significantly improve your well-being. Simple practices like
+              meditation, mindful breathing, journaling, or yoga calm the mind
+              and reduce heart strain.
+            </p>
+          </div>
+        </div>
+        <!-- Hydration Card -->
+        <div class="card" onclick="toggleCard(this)">
+          <!-- <img src="water.png" alt="Hydration"> -->
+          <h3>Hydration</h3>
+          <p>Stay hydrated for optimal heart function.</p>
+          <div class="card-detail">
+            <p>
+              Drinking enough water plays a vital role in maintaining a healthy
+              cardiovascular system. Proper hydration helps regulate blood
+              volume, supports smooth circulation, and ensures that essential
+              nutrients and oxygen are efficiently delivered to organs—including
+              the heart. Dehydration, on the other hand, can cause blood to
+              thicken, forcing the heart to work harder and potentially leading
+              to fatigue or dizziness. To keep your heart functioning optimally,
+              aim for at least 8 glasses (about 2 liters) of water daily. If
+              you're physically active or in a hot climate, your body may need
+              even more. A hydrated body means a well-supported heart—so sip
+              regularly throughout the day for steady energy, better focus, and
+              improved heart performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+      <div class="footer-content">
+        <div class="about-us">
+          <h2>CardioCare</h2>
+          <p>
+            CardioCare is your heart's digital companion. We provide heart
+            disease prediction and personalized diet plans for a healthier life.
+            Our platform combines medical insights with modern technology to
+            help users make informed decisions about their cardiovascular
+            well-being. Whether you're looking to assess your heart risk,
+            improve your lifestyle through guided diet recommendations, or
+            simply stay informed, CardioCare is here to support every step of
+            your health journey. With an intuitive interface, evidence-based
+            resources, and easy-to-use tools, CardioCare empowers users to take
+            proactive steps toward a heart-healthy future. Designed for
+            accessibility, our system ensures that critical health knowledge is
+            just a click away for everyone-anytime, anywhere
+          </p>
+        </div>
+        <nav class="footer-links">
+          <a href="javascript:void(0)" onclick="scrollToTop()">Home</a>
+          <a href="javascript:void(0)" onclick="scrollToTop()">Prediction</a>
+          <a href="javascript:void(0)" onclick="scrollToSection('diet')"
+            >Diet Plan</a
+          >
+
+          <a href="javascript:void(0)" onclick="scrollToSection('did-you-know')"
+            >Did You Know?</a
+          >
+          <a href="javascript:void(0)" onclick="scrollToSection('read-more')"
+            >Read More</a
+          >
+          <br />
+          <a href="#">Contact: cardiocare.help@gmail.com</a>
+          <a href="#">Phone: +91 1234567890</a>
+        </nav>
+        <p class="footer-copy">&copy; 2025 CardioCare. All rights reserved.</p>
+        <p class="footer-copy">Stay healthy, stay informed 💓</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js" defer></script>
+  </body>
+</html>
